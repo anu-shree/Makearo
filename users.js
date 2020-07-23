@@ -23,8 +23,9 @@ async function main()
         await client.close();
     }
 }
-module.exports = (req, res) => {
- res.send(`Hello`)
+module.exports = async (req, res) => {
+  //const { body } = req
+  res.end('Hello you just parsed the request body!')
 }
 
 main().catch(console.error);
