@@ -25,7 +25,7 @@ async function main()
 }
 module.exports = async (req, res) => {
   //const { body } = req
-  res.end('Hello you just parsed the request body!')
+  res.send('Hello you just parsed the request body!')
 }
 
 main().catch(console.error);
