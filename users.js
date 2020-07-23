@@ -1,5 +1,6 @@
 // Import Dependencies
 const url = require('url')
+const uri = "mongodb+srv://untanglegeek:Geeks%2320Ism%2ANerds@makaero.qc4nx.mongodb.net/makearo?retryWrites=true&w=majority";
 const MongoClient = require('mongodb').MongoClient
 
 // Create cached connection variable
@@ -19,7 +20,7 @@ async function connectToDatabase(uri) {
 
   // Select the database through the connection,
   // using the database path of the connection string
-  const db = client.db(url.parse(uri).pathname.substr(1))
+  const db = await client.db(url.parse(uri).pathname.substr(1))
 
   // Cache the database connection and return the connection
   cachedDb = db
@@ -31,16 +32,15 @@ async function connectToDatabase(uri) {
 module.exports = async (req, res) => {
   // Get a database connection, cached or otherwise,
   // using the connection string environment variable as the argument
-  const db = await connectToDatabase(process.env.MONGODB_URI)
+  //const db = await connectToDatabase(process.env.MONGODB_URI)
 
   // Select the "users" collection from the database
-  const collection = await db.collection('users')
+  //const collection = await db.collection('users')
 
   // Select the users collection from the database
-  const users = await collection.find({}).toArray()
+  //const users = await collection.find({}).toArray()
 
   // Respond with a JSON string of all users in the collection
-  res.status(200).json({ users })
-  res.send("Working")
-  
+  //res.status(200).json({ users })
+  res.status(200).send("Working")
 }
