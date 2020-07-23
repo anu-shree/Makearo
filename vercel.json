@@ -2,6 +2,6 @@
     "name": "my-mongodb-api",
     "version": 2,
     "env": {
-      "MONGODB_URI": "mongodb+srv://untanglegeek:<Geeks#20Ism*Nerds>@makaero.qc4nx.mongodb.net/<makearo>?retryWrites=true&w=majority"
+      "MONGODB_URI": "mongodb+srv://untanglegeek:Geeks%2320Ism%2ANerds@makaero.qc4nx.mongodb.net/makearo?retryWrites=true&w=majority"
     }
   }
